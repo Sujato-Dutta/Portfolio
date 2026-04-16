@@ -1,13 +1,9 @@
 import { motion } from "framer-motion";
-import { Mail, ArrowDown } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { personalInfo } from "@/data/personal";
 
 export default function Hero() {
-    const handleScrollToProjects = () => {
-        document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
-    };
-
     return (
         <section
             id="about"
@@ -55,10 +51,30 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.6 }}
-                            className="text-slate-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8"
+                            className="text-slate-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-6"
                         >
                             {personalInfo.bio}
                         </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.65 }}
+                            className="flex flex-col gap-2 mb-8 text-slate-400 text-sm md:text-base justify-center lg:justify-start items-center lg:items-start"
+                        >
+                            <div className="flex items-center gap-2">
+                                <Phone size={16} className="text-purple-400" />
+                                <span>{personalInfo.phone}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Mail size={16} className="text-purple-400" />
+                                <span>{personalInfo.email} (Personal)</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Mail size={16} className="text-purple-400" />
+                                <span>{personalInfo.collegeEmail} (College)</span>
+                            </div>
+                        </motion.div>
 
                         {/* Social Icons */}
                         <motion.div
@@ -85,29 +101,7 @@ export default function Hero() {
                             >
                                 <FaLinkedin size={20} />
                             </a>
-                            <a
-                                href={`mailto:${personalInfo.email}`}
-                                className="flex items-center justify-center w-11 h-11 rounded-xl bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300"
-                                aria-label="Email"
-                            >
-                                <Mail size={20} />
-                            </a>
                         </motion.div>
-
-                        {/* CTA */}
-                        <motion.button
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.9 }}
-                            onClick={handleScrollToProjects}
-                            className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:from-purple-500 hover:to-blue-500 transition-all duration-300"
-                        >
-                            View Projects
-                            <ArrowDown
-                                size={18}
-                                className="group-hover:translate-y-0.5 transition-transform"
-                            />
-                        </motion.button>
                     </div>
 
                     {/* Profile Photo */}
