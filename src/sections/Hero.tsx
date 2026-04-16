@@ -118,7 +118,7 @@ export default function Hero() {
 
                             <div className="relative w-full h-full rounded-full">
                                 <img
-                                    src={personalInfo.profileImage}
+                                    src={import.meta.env.BASE_URL + personalInfo.profileImage.replace(/^\//, "")}
                                     alt={personalInfo.name}
                                     className="w-full h-full rounded-full object-cover shadow-2xl"
                                 />

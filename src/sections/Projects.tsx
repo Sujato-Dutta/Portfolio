@@ -40,7 +40,7 @@ export default function Projects() {
                                 {/* Cover Image */}
                                 <div className="relative h-44 overflow-hidden">
                                     <img
-                                        src={project.coverImage}
+                                        src={import.meta.env.BASE_URL + project.coverImage.replace(/^\//, "")}
                                         alt={project.title}
                                         className="object-cover group-hover:scale-105 transition-transform duration-700 w-full h-full"
                                     />

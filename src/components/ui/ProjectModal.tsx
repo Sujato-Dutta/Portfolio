@@ -21,7 +21,7 @@ export default function ProjectModal({ project, isOpen, onClose }: { project: Pr
           </button>
           
           <div className="h-64 relative">
-            <img src={project.coverImage} className="w-full h-full object-cover" alt={project.title} />
+            <img src={import.meta.env.BASE_URL + project.coverImage.replace(/^\//, "")} className="w-full h-full object-cover" alt={project.title} />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
           </div>
 

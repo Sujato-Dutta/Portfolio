@@ -24,7 +24,7 @@ export default function TimelineItem({
           
           <div className="glass rounded-xl p-6">
             <div className="flex items-center gap-4 mb-4">
-              {logo && <img src={logo} alt={subtitle} className="w-10 h-10 rounded shadow-sm object-cover bg-white p-1" />}
+              {logo && <img src={import.meta.env.BASE_URL + logo.replace(/^\//, "")} alt={subtitle} className="w-10 h-10 rounded shadow-sm object-cover bg-white p-1" />}
               <div>
                 <h3 className="text-lg font-bold text-white">{title}</h3>
                 <div className="text-purple-400 font-medium">{subtitle}</div>
